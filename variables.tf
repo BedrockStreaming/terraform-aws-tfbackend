@@ -18,9 +18,9 @@ variable "users" {
   type = list(string)
 }
 
-variable "statements" {
+variable "kms_policy_documents" {
   type = list(string)
-  description = "JSON Statements list to merge to the iam policy document"
+  description = "additional KMS policy documents (in JSON)"
   default = []
 }
 
