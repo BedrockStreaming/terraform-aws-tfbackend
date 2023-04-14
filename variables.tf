@@ -18,6 +18,12 @@ variable "users" {
   type = list(string)
 }
 
+variable "kms_policy_documents" {
+  type = list(string)
+  description = "additional KMS policy documents (in JSON)"
+  default = []
+}
+
 // Tags to apply on s3_bucket
 variable "tags" {
   type = map(string)

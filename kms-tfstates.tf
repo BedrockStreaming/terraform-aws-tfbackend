@@ -8,6 +8,8 @@ resource "aws_kms_key" "kms_tfstates" {
 }
 
 data "aws_iam_policy_document" "kms_tfstate_policy" {
+  source_policy_documents = var.kms_policy_documents
+
   statement {
     sid = "Allow access for Key Administrators"
 
