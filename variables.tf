@@ -18,6 +18,12 @@ variable "users" {
   type = list(string)
 }
 
+// JSON Statements list to merge to the iam policy document
+variable "statements" {
+  type = list(string)
+  default = []
+}
+
 // Tags to apply on s3_bucket
 variable "tags" {
   type = map(string)
