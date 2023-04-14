@@ -18,9 +18,9 @@ variable "users" {
   type = list(string)
 }
 
-// JSON Statements list to merge to the iam policy document
 variable "statements" {
   type = list(string)
+  description = "JSON Statements list to merge to the iam policy document"
   default = []
 }
 
