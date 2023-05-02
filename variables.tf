@@ -19,9 +19,9 @@ variable "users" {
 }
 
 variable "kms_policy_documents" {
-  type = list(string)
+  type        = list(string)
   description = "additional KMS policy documents (in JSON)"
-  default = []
+  default     = []
 }
 
 // Tags to apply on s3_bucket
