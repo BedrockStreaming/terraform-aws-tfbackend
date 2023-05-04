@@ -24,6 +24,10 @@ output "s3_tfstates" {
   value = aws_s3_bucket.bucket_tfstates.arn
 }
 
+output "s3_tfstates_id" {
+  value = aws_s3_bucket.bucket_tfstates.id
+}
+
 // ARN of the dynamodb table created
 output "dynamodb_tfstates" {
   value = aws_dynamodb_table.dynamodb_tfstates.arn
