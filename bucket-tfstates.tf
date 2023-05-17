@@ -17,8 +17,6 @@ resource "aws_s3_bucket" "bucket_tfstates" {
     }
   }
 
-  policy = data.aws_iam_policy_document.bucket_tfstates_policy.json
-
   tags = merge(
     {
       "Name" = var.bucket_tfstates_name
@@ -32,6 +30,8 @@ resource "aws_s3_bucket" "bucket_tfstates" {
 }
 
 data "aws_iam_policy_document" "bucket_tfstates_policy" {
+  source_policy_documents = var.bucket_policy_documents
+
   statement {
     sid    = "Admins can do everything"
     effect = "Allow"
@@ -97,3 +97,7 @@ data "aws_iam_policy_document" "bucket_tfstates_policy" {
   }
 }
 
+resource "aws_s3_bucket_policy" "bucket_tfstates_policy" {
+  bucket = aws_s3_bucket.bucket_tfstates.id
+  policy = data.aws_iam_policy_document.bucket_tfstates_policy.json
+}
