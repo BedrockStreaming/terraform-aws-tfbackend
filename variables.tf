@@ -24,6 +24,12 @@ variable "kms_policy_documents" {
   default     = []
 }
 
+variable "bucket_policy_documents" {
+  type        = list(string)
+  description = "additional Bucket policy documents (in JSON)"
+  default     = []
+}
+
 // Tags to apply on s3_bucket
 variable "tags" {
   type = map(string)
